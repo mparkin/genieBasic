@@ -15,7 +15,7 @@ CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 LDFLAGS	= -L/usr/local/lib
 LIBS    = -lm -lpthread -lwiringPi -lgeniePi
 
-SRC	= basicDemo.c
+SRC	= pumpControl.c
 
 # May not need to  alter anything below this line
 ###############################################################################
@@ -23,9 +23,9 @@ SRC	= basicDemo.c
 OBJ	=	$(SRC:.c=.o)
 BINS	=	$(SRC:.c=)
 
-basicDemo:	basicDemo.o
+pumpControl:	pumpControl.o
 	@echo [link]
-	@$(CC) -o $@ basicDemo.o $(LDFLAGS) $(LIBS)
+	@$(CC) -o $@ pumpControl.o $(LDFLAGS) $(LIBS)
 
 .c.o:
 	@echo [Compile] $<
